@@ -145,6 +145,8 @@ In Terminal window:
 
 Happy documenting!
 
+<This is Mike Jarvis & Mark testing GitBot>
+
 ![Partner Template landing page](./docs-book/master_middleman/source/images/partner-template-landing.png)
 
 ![Partner Template service index page](./docs-book/master_middleman/source/images/partner-template-service-index.png)
