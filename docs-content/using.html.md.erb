@@ -1,15 +1,37 @@
 ---
-title: Using YOUR-PRODUCT-NAME
+title: Using Microsoft Azure Log Analytics Nozzle for PCF
 owner: Partners
 ---
 
-This topic describes how to use YOUR-PRODUCT-NAME.
+This topic describes how to use Microsoft Azure Log Analytics Nozzle for PCF.
 
-##<a id='using'></a> Using YOUR-PRODUCT-NAME
+##<a id='using'></a> Using the Microsoft Azure Log Analytics Nozzle for PCF
 
-**This topic should include any instructions for how to use the service or dashboard created by the tile. 
-Give procedures for how to perform the different functions offered by your product and provide screenshots where necessary.** 
+After installation, the Azure Log Analytics Nozzle is available in the Apps Manager. You can start or stop the app, scale the app by changing instance number, memory limit and disk limit.
+        <%= image_tag("images/apps-manager.png") %>
 
-**You can also use this section to include information about Architecture and Troubleshooting for known errors. 
-If you include a Troubleshooting section, follow the Symptom/Explanation format used in the 
-[Okta Troubleshooting](http://docs.pivotal.io/p-identity/okta/troubleshooting.html) topic**.
+##<a id='logsearch'></a> View Logs from PCF in OMS Log Analytics
+
+Follow these steps to view streaming logs from PCF:
+
+1. Navigate to OMS portal of the workspace.
+
+1. You can use **Log Search** to query the data. Here're some examples.
+
+    1. To list all the logs.
+        <%= image_tag("images/logsearch-1.png") %>
+
+    1. To get the instance count of each application.
+        <%= image_tag("images/logsearch-2.png") %>
+
+    1. To view the realtime CPU usage of each application.
+        <%= image_tag("images/logsearch-3.png") %>
+
+1. You can create and customize view dashboard in **View Designer**.
+        <%= image_tag("images/dashboard-view.png") %>
+
+1. You can create **Alert Rules** to alert you on different events.
+        <%= image_tag("images/create-alert-1.png") %>
+        <%= image_tag("images/create-alert-2.png") %>
+
+For more details, please refer to the [guidance](https://github.com/Azure/oms-log-analytics-firehose-nozzle#view-in-oms-portal).
