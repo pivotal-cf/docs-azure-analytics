@@ -1,19 +1,16 @@
 ---
-title: Release Notes for YOUR-PRODUCT-NAME
+title: Microsoft Azure Log Analytics Nozzle for PCF Release Notes
 owner: Partners
 ---
 
-**This topic should include the Release Notes for your product. For examples, see the 
-[GCP Service Broker Release Notes](http://docs.pivotal.io/gcp-sb/release-notes.html) or the 
-[ISS Knowtify Search Analytics Release Notes](http://docs.pivotal.io/knowtify/release.html).
-When you release a new version, add new release notes to this file, keeping the older notes below.**
+##<a id="ver"></a> v1.0.0
 
-### vCURRENT-VERSION-NUMBER (Ex. v1.0.1)
+**Release Date:** June 26, 2017
 
-**Release Date:** RELEASE-DATE (Ex. August 1, 2016)
+This is the initial release of Microsoft Azure Log Analytics Nozzle for PCF. Features included in this release:
 
-Features included in this release:
-
-* Feature one.
-* Feature two.
-* Feature three.
+* Consume all data from CF Loggregator Firehose, including logs from all apps, and the metrics data from CF components
+* Organize, filter and transfer data to OMS Log Analytics for deep analyzing
+* Integration with OMS Log Analytics, including default view dashboards and alert rules for monitoring the health and workload of your PCF deployment
+* Automated default configuration for the Microsoft Azure Log Analytics Nozzle
+* Additional logging to track the nozzle status, for example, slow consumer alerts; received, sent and lost events
