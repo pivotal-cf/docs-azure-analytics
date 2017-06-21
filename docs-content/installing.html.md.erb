@@ -3,19 +3,21 @@ title: Installing and Configuring Microsoft Azure Log Analytics Nozzle for PCF
 owner: Partners
 ---
 
-This topic describes how to install and configure Microsoft Azure Log Analytics Nozzle for PCF.
+This topic describes how to install and configure Microsoft Azure Log Analytics Nozzle for Pivotal Cloud Foundry (PCF).
 
 ##<a id='create-oms'></a> Create an OMS Workspace
 
-Follow these steps to create an OMS workspace.
+Create an OMS workspace to send your PCF data to.
 
-1. In the Azure portal, search the list of services in the Marketplace for **Log Analytics**, and then select **Log Analytics**.
+1. Log into the the Azure portal.
+
+1. Search the list of services in the Marketplace for **Log Analytics**, and then select **Log Analytics**.
         <%= image_tag("images/create-workspace-1.png") %>
 
-1. Click **Create**, then select choices for the following items:
+1. Click **Create**, then enter or select choices for the following:
 
-    1. **OMS Workspace** - Type a name for your workspace.
-    1. **Subscription** - If you have multiple subscriptions, choose the one you want to associate with the new workspace.
+    1. **OMS Workspace**: Enter a name for your workspace.
+    1. **Subscription**: If you have multiple subscriptions, choose the one you want to associate with the new workspace.
     1. **Resource group**
     1. **Location**
     1. **Pricing tier**
@@ -23,29 +25,35 @@ Follow these steps to create an OMS workspace.
         <%= image_tag("images/create-workspace-2.png") %>
 
 1. Click **OK** to create the workspace.
-1. Find the workspace in the Azure portal, and then click **OMS Portal** -> **Settings** -> **Connected Sources**, get the ID and key of the workspace.
+
+1. Find the newly-created workspace in the Azure portal, and then click **OMS Portal** > **Settings** > **Connected Sources**.
+
+1. Record the **Workspace ID** and **Primary Key** values for the workspace.
         <%= image_tag("images/workspace-key.png") %>
 
-##<a id='create-cf-user'></a> Create a CF User
+##<a id='create-cf-user'></a> Create a CF User Account
 
-Create a CF user with access to the Firehose and Cloud Controller:
+Create a Cloud Foundry (CF) user account with access to the Firehose and Cloud Controller. The Microsoft Azure Log Analytics Nozzle for PCF service uses this account to retrieve log data.
 
-1. Authenticate with the CF CLI
-<pre class="terminal">$ cf login -a https://api.YOUR-SYSTEM-DOMAIN -u admin -p UAA-ADMIN-CREDENTIALS-SECRET</pre>
+1. Install the User Account and Authentication command-line interface (`uaac`), if you have not already:
+<pre class="terminal">$ gem install cf-uaac</pre>
 
-1. Target your system with the UAA CLI
-<pre class="terminal">$ uaac target https://uaa.YOUR-SYSTEM-DOMAIN</pre>
+1. Log into the CF Command-Line Interface (cf CLI) as user `admin`:
+<pre class="terminal">$ cf login -a https<span>:</span>//api.YOUR-SYSTEM-DOMAIN -u admin -p UAA-ADMIN-CREDENTIALS-SECRET</pre>
 
-1. Authenticate and obtain an access token for the admin client from the UAA server.
+1. Target your system with the `uaac`:
+<pre class="terminal">$ uaac target https<span>:</span>//uaa.YOUR-SYSTEM-DOMAIN</pre>
+
+1. Authenticate and obtain an access token for the admin client from the User Account and Authentication (UAA) server:
 <pre class="terminal">$ uaac token client get admin -s UAA-ADMIN-CLIENT-CREDENTIALS-SECRET</pre>
 
-1. Create CF user
+1. Create a CF user account:
 <pre class="terminal">$ cf create-user FIREHOSE-USER FIREHOSE-USER-PASSWORD</pre>
 
-1. Add the user to the Cloud Controller Admin Read-Only group
+1. Add the new user to the Cloud Controller Admin Read-Only group:
 <pre class="terminal">$ uaac member add cloud\_controller.admin\_read\_only FIREHOSE-USER</pre>
 
-1. Add the user to the Doppler Firehose group
+1. Add the new user to the Doppler Firehose group:
 <pre class="terminal">$ uaac member add doppler.firehose FIREHOSE-USER</pre>
 
 ##<a id='install'></a> Install and Configure Microsoft Azure Log Analytics Nozzle for PCF
@@ -57,30 +65,30 @@ Create a CF user with access to the Firehose and Cloud Controller:
 1. Under the **Import a Product** button, click **+** next to the version number of Microsoft Azure Log Analytics Nozzle for PCF.
 This adds the tile to your staging area.
 
-1. Click the newly added **Microsoft Azure Log Analytics Nozzle for PCF** tile.
+1. Click the newly-added **Microsoft Azure Log Analytics Nozzle for PCF** tile.
 
-1. **Nozzle Config**:
+1. In the **Nozzle Config** pane, fill in configuration options as follows:
 
-    1. **OMS Workspace ID**: Enter the OMS workspace ID.
-    1. **OMS Workspace Key**: Enter the OMS workspace key.
+    1. **OMS Workspace ID**: Enter the OMS workspace ID from the <a href="#create-oms">Create an OMS Workspace</a> step.
+    1. **OMS Workspace Key**: Enter the OMS workspace key from the <a href="#create-oms">Create an OMS Workspace</a> step.
     1. **OMS Post Timeout**: Specify the HTTP post timeout for sending events to OMS Log Analytics. Default is 10s.
     1. **OMS Batch Time**: Specify the interval for posting a batch of messages to OMS Log Analytics. Default is 10s.
-    1. **Max Event Number Per Batch**: Specify the max number of messages in a batch. Default is 1000.
-    1. **Firehose Username**: Enter the name of the user that you created in the <a href="#create-cf-user">Create a CF User</a> step.
-    1. **Firehose User Password**: Enter the password of the user that you created in the <a href="#create-cf-user">Create a CF User</a> step.
-    1. **Cloud Foundry API Address**: Enter the API URL of the PCF environment. e.g. https://api.203.0.113.0.xip.io
-    1. **Cloud Foundry Doppler Address**: Enter the URL of the Loggregator Traffic Controller. e.g. wss://doppler.203.0.113.0.xip.io:443
-    1. **Skip SSL Validation**: This option should only be checked if you are on a known and trusted dev environment and have expired certificates. Do not enable this option for a production system.
-    1. **Event Types to be Filtered out**: A comma separated list of the event types to be filtered out. Valid types are METRIC, LOG, and HTTP.
-    1. **Idle Timeout**: Specify the Keep Alive duration for the firehose consumer. Default is 60s.
-    1. **Log Event Count**: If this option is checked, the total count of events that the nozzle has received, sent and lost will be logged to OMS Log Analytics as CounterEvents.
+    1. **Max Event Number Per Batch**: Specify the maximum number of messages in a batch. Default is 1000.
+    1. **Firehose Username**: Enter the name of the user that you created in the <a href="#create-cf-user">Create a CF User Account</a> step.
+    1. **Firehose User Password**: Enter the password of the user that you created in the <a href="#create-cf-user">Create a CF User Account</a> step.
+    1. **Cloud Foundry API Address**: Enter the API URL of the PCF environment. e.g. `https://api.203.0.113.0.xip.io`.
+    1. **Cloud Foundry Doppler Address**: Enter the URL of the Loggregator Traffic Controller. e.g. `wss://doppler.203.0.113.0.xip.io:443`.
+    1. **Skip SSL Validation**: Enable this option only if you are on a known and trusted dev environment and have expired certificates. Do not enable this option for a production system.
+    1. **Event Types to be Filtered out**: A comma-separated list of the event types to be filtered out. Valid event types include `METRIC`, `LOG`, and `HTTP`.
+    1. **Idle Timeout**: Specify the keep-alive duration for the Firehose consumer. Default is 60s.
+    1. **Log Event Count**: Enable this option to log the total count of events that the nozzle receives, sends and loses, to OMS Log Analytics as `CounterEvents`.
     1. **Log Event Count Interval**: The time interval for logging event count to OMS Log Analytics. Default is 60s.
-    1. **Log Level**: Logging level of the nozzle. Options are Debug, Info, and Error. Default is Debug.
+    1. **Log Level**: Logging level of the nozzle. Options are `Debug`, `Info`, and `Error`. Default is `Debug`.
 
-1. **Errands**: Leave settings as default.
+1. In the **Errands** pane, leave the default settings.
 
-1. **Resource Config**: Leave settings as default.
+1. In the **Resource Config** pane, leave the default settings.
 
-1. **Stemcell**: Ensure the proper stemcell is available.
+1. in the **Stemcell** pane, ensure that the proper stemcell is specified.
 
 1. Return to the Ops Manager Installation Dashboard and click **Apply Changes** to install Microsoft Azure Log Analytics Nozzle for PCF tile.
