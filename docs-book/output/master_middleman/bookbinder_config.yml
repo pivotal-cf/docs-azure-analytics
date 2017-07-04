@@ -1,0 +1,20 @@
+---
+:archive_menu:
+  ".": 
+:production_host: hello
+:subnav_templates:
+  azure-log-analytics-nozzle: azure-log-analytics-nozzle_subnav
+:template_variables: 
+:local_repo_dir: "/Users/ghanna/workspace/docs-azure-analytics"
+:workspace: !ruby/object:Pathname
+  path: "/Users/ghanna/workspace/docs-azure-analytics/docs-book/output/master_middleman/source"
+:feedback_enabled: 
+:repo_link_enabled: true
+:repo_links:
+  azure-log-analytics-nozzle:
+    repo: docs-content
+    ref: master
+    at_path: 
+:product_info:
+  azure-log-analytics-nozzle: {}
+:elastic_search: false
