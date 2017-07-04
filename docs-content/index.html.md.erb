@@ -32,7 +32,7 @@ Microsoft Azure Log Analytics Nozzle for PCF includes the following key features
 * Consumes all data from Loggregator [Firehose](https://docs.pivotal.io/pivotalcf/loggregator/architecture.html#firehose), including logs from apps hosted on PCF and metrics data from Cloud Foundry (CF) components
 * Organizes, filters and transfers data to OMS Log Analytics for deep analysis
 * Integrates with OMS Log Analytics, including default view dashboards and alert rules, to monitor the health and workload of your PCF deployment
-* Adds logging to track the status of the nozzle itself, for example [slow consumer alerts](https://docs.cloudfoundry.org/loggregator/log-ops-guide.html#slow-noz) received, sent and lost events
+* Adds logging to track the status of the nozzle itself, for example [slow consumer alerts](https://docs.cloudfoundry.org/loggregator/log-ops-guide.html#slow-noz), received, sent and lost events
 * Has automatic configuration defaults
 
 PCF operators can install the [OMS agent for BOSH](https://github.com/Azure/oms-agent-for-linux-boshrelease) to supply additional system data to OMS Log Analytics, including Cloud Controller and User Account and Authentication (UAA) server security event logs, and VM-level syslogs and metrics from all components.
