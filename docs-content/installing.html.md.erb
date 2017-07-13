@@ -81,6 +81,7 @@ This adds the tile to your staging area.
     1. **Firehose User Password**: Enter the password of the user that you created in the <a href="#create-cf-user">Create a CF User Account</a> step.
     1. **Cloud Foundry API Address**: Enter the API URL of the PCF environment. e.g. `https://api.203.0.113.0.xip.io`.
     1. **Cloud Foundry Doppler Address**: Enter the URL of the Loggregator Traffic Controller. e.g. `wss://doppler.203.0.113.0.xip.io:443`.
+    1. **Cloud Foundry Environment**: Enter the label to identify logs and metrics from different PCF environments.
     1. **Skip SSL Validation**: Enable this option only if you are on a known and trusted dev environment and have expired certificates. Do not enable this option for a production system.
     1. **Event Types to be Filtered out**: A comma-separated list of the event types to be filtered out. Valid event types include `METRIC`, `LOG`, and `HTTP`.
     1. **Idle Timeout**: Specify the keep-alive duration for the Firehose consumer. Default is 60s.
