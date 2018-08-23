@@ -15,7 +15,8 @@ owner: Partners
 
 This document describes the Microsoft Azure Log Analytics Nozzle for Pivotal Cloud Foundry (PCF).
 
-## <a id='overview'></a>Overview
+
+## <a id='overview'></a> Overview
 
 Microsoft [Operations Management Suite](https://docs.microsoft.com/en-us/azure/operations-management-suite/) (OMS) is Microsoft's cloud-based IT management solution that helps you manage and protect your on-premises and cloud infrastructure.
 
@@ -25,7 +26,8 @@ The Microsoft Azure Log Analytics Nozzle for PCF receives logs and metrics from 
 
 PCF developers and operators can then view and analyze their application logs and health metrics through the OMS portal or the Azure portal.
 
-## <a id='features'></a>Key Features
+
+## <a id='features'></a> Key Features
 
 Microsoft Azure Log Analytics Nozzle for PCF includes the following key features:
 
@@ -37,7 +39,10 @@ Microsoft Azure Log Analytics Nozzle for PCF includes the following key features
 
 PCF operators can install the [OMS agent for BOSH](https://github.com/Azure/oms-agent-for-linux-boshrelease) to supply additional system data to OMS Log Analytics, including Cloud Controller and User Account and Authentication (UAA) server security event logs, and VM-level syslogs and metrics from all components.
 
-## <a id="snapshot"></a>Product Snapshot
+
+## <a id="snapshot"></a> Product Snapshot
+
+<p class='note'><strong>Note:</strong> As of PCF v2.0, Elastic Runtime is renamed Pivotal Application Service (PAS). If your tile supports PCF v2.0, it will use PAS, not Elastic Runtime.</p>
 
 The following table provides version and version-support information about Microsoft Azure Log Analytics Nozzle for PCF.
 
@@ -69,21 +74,22 @@ The following table provides version and version-support information about Micro
         <td>Azure, AWS, GCP, OpenStack, and vSphere</td>
     </tr>
 </table>
-\* As of PCF v2.0, <em>Elastic Runtime</em> is renamed <em>Pivotal Application Service (PAS)</em>. If your tile supports PCF 2.0, it will use PAS, not Elastic Runtime.
 
-## <a id="reqs"></a>Requirements
+
+## <a id="reqs"></a> Requirements
 
 Microsoft Azure Log Analytics Nozzle for PCF has the following installation requirements:
 
 + Admin access to a running PCF installation.
-+ The [Cloud Foundry Command-Line Interface](https://docs.pivotal.io/pivotalcf/cf-cli/install-go-cli.html)
-+ An [Azure OMS Workspace](https://docs.microsoft.com/en-us/azure/log-analytics/log-analytics-get-started)
++ The [Cloud Foundry Command-Line Interface](https://docs.pivotal.io/pivotalcf/cf-cli/install-go-cli.html).
++ An [Azure OMS Workspace](https://docs.microsoft.com/en-us/azure/log-analytics/log-analytics-get-started).
 
-## <a id="feedback"></a>Feedback
 
-Please provide any bugs, feature requests, or questions to the 
-[Pivotal Cloud Foundry Feedback](mailto:pivotal-cf-feedback@pivotal.io) list or send an email to [Azure Cloud Foundry Engineering](mailto:azcfengg@microsoft.com).
+## <a id="feedback"></a> Feedback
 
-## <a id='license'></a>License
+Provide any bugs, feature requests, or questions to the [Pivotal Cloud Foundry Feedback](mailto:pivotal-cf-feedback@pivotal.io) list or send an email to [Azure Cloud Foundry Engineering](mailto:azcfengg@microsoft.com).
+
+
+## <a id='license'></a> License
 
 Apache License Version 2.0
