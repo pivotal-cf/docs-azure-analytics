@@ -5,25 +5,24 @@ owner: Partners
 
 This topic describes how to use Microsoft Azure Log Analytics Nozzle for PCF.
 
-##<a id='using'></a> Using the Microsoft Azure Log Analytics Nozzle for PCF
 
-After you install the Azure Log Analytics Nozzle, you can manage it in the Apps Manager as a PCF app. You can start or stop the app, and scale it by changing its instance number, memory limit and disk limit.
+## <a id='using'></a> Using the Microsoft Azure Log Analytics Nozzle for PCF
+
+After you install the Azure Log Analytics Nozzle, you can manage it in the Apps Manager as a PCF app. You can start or stop the app, and scale it by changing its instance number, memory limit, and disk limit.
         <%= image_tag("images/apps-manager.png") %>
 
-##<a id='logsearch'></a> View Logs from PCF in OMS Log Analytics
+
+## <a id='logsearch'></a> View Logs from PCF in OMS Log Analytics
 
 To view streaming PCF logs in the Azure Operations Management Suite (OMS) portal, navigate to the workspace that you [created](./installing.html#create-oms) for your PCF logs.
 
 From your workspace, you can:
 
 * Use **Log Search** to query the data. For example:
-
     * To list all the logs:
         <%= image_tag("images/logsearch-1.png") %>
-
     * To get the instance count of each app:
         <%= image_tag("images/logsearch-2.png") %>
-
     * To view the realtime CPU usage of each app:
         <%= image_tag("images/logsearch-3.png") %>
 
@@ -34,4 +33,4 @@ From your workspace, you can:
         <%= image_tag("images/create-alert-1.png") %>
         <%= image_tag("images/create-alert-2.png") %>
 
-For more details, refer to the [View in OMS Portal](https://github.com/Azure/oms-log-analytics-firehose-nozzle#view-in-oms-portal) section of the Microsoft Azure Log Analytics Nozzle code repository.
+For more information, see the [View in OMS Portal](https://github.com/Azure/oms-log-analytics-firehose-nozzle#view-in-oms-portal) section of the Microsoft Azure Log Analytics Nozzle code repository.
