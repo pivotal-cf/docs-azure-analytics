@@ -24,6 +24,10 @@ Features included in this release:
 * Add configuration in PCF tile to scale the nozzle from Operations Manager
 * Refine OMS view files, optimized data flow verification, and compability for PCF v2.0+ and System Metrics Forwarder
 
+Known Issue:
+
+* Due to the removal of support for go 1.7 in go buildpack [v1.8.28](https://github.com/cloudfoundry/go-buildpack/releases/tag/v1.8.28), installation of tile of this version or older will failed after October 12, 2018. Upgrade to version 1.3.1 will resolve the issue. For sample error message, please visit issue [here](https://github.com/Azure/oms-log-analytics-firehose-nozzle/issues/15).
+
 
 ## <a id="ver"></a> v1.2.0
 
