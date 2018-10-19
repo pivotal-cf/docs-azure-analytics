@@ -3,17 +3,32 @@ title: Microsoft Azure Log Analytics Nozzle for PCF Release Notes
 owner: Partners
 ---
 
+## <a id="ver"></a> v1.3.1
+
+**Release Date:** October 19, 2018
+
+Feature included in this release:
+
+* Fixes compile error caused by the removal of support for go 1.7 in go buildpack
+  [v1.8.28](https://github.com/cloudfoundry/go-buildpack/releases/tag/v1.8.28)
+* Specifies go buildpack by name instead of link to Github
+
+
 ## <a id="ver"></a> v1.3.0
 
 **Release Date:** August 17, 2018
 
 Features included in this release:
 
-* Add feature `Space Whitelist` to filter unneeded metrics and logs
-* Fetch API address and doppler adress automatically when absent in parameters
-* Adapt to changes made to slow consumer alert from PCF v2.0+
-* Add configuration in PCF tile to scale the nozzle from Operations Manager
-* Refine OMS view files, optimized data flow verification, and compability for PCF v2.0+ and System Metrics Forwarder
+* Adds feature `Space Whitelist` to filter unneeded metrics and logs
+* Fetches API address and doppler adress automatically when absent in parameters
+* Adapts to changes made to slow consumer alert from PCF v2.0+
+* Adds configuration in PCF tile to scale the nozzle from Operations Manager
+* Refines OMS view files, optimized data flow verification, and compability for PCF v2.0+ and System Metrics Forwarder
+
+Known Issue:
+
+* Due to the removal of support for go 1.7 in go buildpack [v1.8.28](https://github.com/cloudfoundry/go-buildpack/releases/tag/v1.8.28), installation of tile of this version or older will fail after October 12, 2018. Errand `deploy-all` of this tile can be disabled manually to skip this issue and upgrading to version 1.3.1 will resolve the issue. For sample error message, please visit issue [here](https://github.com/Azure/oms-log-analytics-firehose-nozzle/issues/15).
 
 
 ## <a id="ver"></a> v1.2.0
