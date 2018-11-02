@@ -83,11 +83,11 @@ In Terminal window:
     Enter file in which to save the key (/Users/pspinrad/.ssh/id_rsa): 
     ```
 
-1. Get a [Github](http://github.com) account.
+1. Get a [GitHub](http://github.com) account.
 
-1. Add your RSA public key to your Github account / profile page.
+1. Add your RSA public key to your GitHub account / profile page.
 
-    `$ cat ~/.ssh/id_rsa.pub # copy and paste this into Github profile page as new key`
+    `$ cat ~/.ssh/id_rsa.pub # copy and paste this into GitHub profile page as new key`
 
 #### Get the Correct Ruby Version for Bookbinder: Ruby 2.3.0
 
