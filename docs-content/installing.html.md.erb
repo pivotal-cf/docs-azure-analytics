@@ -1,14 +1,14 @@
 ---
-title: Installing and Configuring Microsoft Azure Log Analytics Nozzle for PCF
+title: Installing and Configuring Microsoft Azure Log Analytics Nozzle for Pivotal Platform
 owner: Partners
 ---
 
-This topic describes how to install and configure Microsoft Azure Log Analytics Nozzle for Pivotal Cloud Foundry (PCF).
+This topic describes how to install and configure Microsoft Azure Log Analytics Nozzle for Pivotal Platform.
 
 
 ## <a id='create-oms'></a> Create an OMS Workspace
 
-Create an OMS workspace to send your PCF data to.
+Create an OMS workspace to send your Pivotal Platform data to.
 
 1. Log in to the Azure portal.
 
@@ -34,7 +34,7 @@ Create an OMS workspace to send your PCF data to.
 
 ## <a id='create-cf-user'></a> Create a CF User Account
 
-Create a Cloud Foundry (CF) user account with access to the Firehose and Cloud Controller. The Microsoft Azure Log Analytics Nozzle for PCF service uses this account to retrieve log data.
+Create a Cloud Foundry (CF) user account with access to the Firehose and Cloud Controller. The Microsoft Azure Log Analytics Nozzle for Pivotal Platform service uses this account to retrieve log data.
 
 1. Install the User Account and Authentication command-line interface (`uaac`), if you have not already:
 <pre class="terminal">$ gem install cf-uaac</pre>
@@ -61,15 +61,15 @@ Create a Cloud Foundry (CF) user account with access to the Firehose and Cloud C
 <pre class="terminal">$ uaac member add doppler.firehose FIREHOSE-USER</pre>
 
 
-## <a id='install'></a> Install and Configure Microsoft Azure Log Analytics Nozzle for PCF
+## <a id='install'></a> Install and Configure Microsoft Azure Log Analytics Nozzle for Pivotal Platform
 
 1. Download the product file from Pivotal Network.
 
 1. Navigate to the Ops Manager Installation Dashboard and click **Import a Product** to upload the product file.
 
-1. Under the **Import a Product** button, click **+** next to the version number of Microsoft Azure Log Analytics Nozzle for PCF. This adds the tile to your staging area.
+1. Under the **Import a Product** button, click **+** next to the version number of Microsoft Azure Log Analytics Nozzle for Pivotal Platform. This adds the tile to your staging area.
 
-1. Click the newly-added **Microsoft Azure Log Analytics Nozzle for PCF** tile.
+1. Click the newly-added **Microsoft Azure Log Analytics Nozzle for Pivotal Platform** tile.
 
 1. In the **Nozzle Config** pane, fill in configuration options as follows:
     1. **OMS Workspace ID**: Enter the OMS workspace ID from the [Create an OMS Workspace](#create-oms) step.
@@ -80,9 +80,9 @@ Create a Cloud Foundry (CF) user account with access to the Firehose and Cloud C
     1. **Max Event Number Per Batch**: Specify the maximum number of messages in a batch. Default is 1000.
     1. **Firehose Username**: Enter the name of the user that you created in the [Create a CF User Account](#create-cf-user) step.
     1. **Firehose User Password**: Enter the password of the user that you created in the [Create a CF User Account](#create-cf-user) step.
-    1. **Cloud Foundry API Address**: Enter the API URL of the PCF environment, or leave it empty to let the nozzle fetch from current environment. e.g. `https://api.203.0.113.0.xip.io`.
+    1. **Cloud Foundry API Address**: Enter the API URL of the Pivotal Platform environment, or leave it empty to let the nozzle fetch from current environment. e.g. `https://api.203.0.113.0.xip.io`.
     1. **Cloud Foundry Doppler Address**: Enter the URL of the Loggregator Traffic Controller, or leave it empty to let the nozzle fetch from current environment. e.g. `wss://doppler.203.0.113.0.xip.io:443`.
-    1. **Cloud Foundry Environment**: Enter the label used in OMS workspace to identify logs and metrics from different PCF environments.
+    1. **Cloud Foundry Environment**: Enter the label used in OMS workspace to identify logs and metrics from different Pivotal Platform environments.
     1. **Skip SSL Validation**: Enable this option only if you are on a known and trusted dev environment and have expired certificates. Do not enable this option for a production system.
     1. **Event Types to be Filtered out**: A comma-separated list of the event types to be filtered out. Valid event types include `METRIC`, `LOG`, and `HTTP`.
     1. **App Space Whitelist**: A comma separated list functioning as a white list for logs and metrics from applications. When left empty, all apps will be monitored. Format for each element in the list should be ORG_NAME.SPACE_NAME or ORG_NAME.*
@@ -97,7 +97,7 @@ Create a Cloud Foundry (CF) user account with access to the Firehose and Cloud C
 
 1. In the **Stemcell** pane, ensure that the proper stemcell is specified.
 
-1. Return to the Ops Manager Installation Dashboard and click **Apply Changes** to install Microsoft Azure Log Analytics Nozzle for PCF tile.
+1. Return to the Ops Manager Installation Dashboard and click **Apply Changes** to install Microsoft Azure Log Analytics Nozzle for Pivotal Platform tile.
 
 
 ## <a id='solution'></a> Import Default Solution for Cloud Foundry to Your OMS Portal
