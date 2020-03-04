@@ -1,5 +1,5 @@
 ---
-title: Microsoft Azure Log Analytics Nozzle for Pivotal Platform Release Notes
+title: Microsoft Azure Log Analytics Nozzle for VMware Tanzu Release Notes
 owner: Partners
 ---
 
@@ -52,9 +52,9 @@ Features included in this release:
 
 * Adds feature `Space Whitelist` to filter unneeded metrics and logs
 * Fetches API address and doppler adress automatically when absent in parameters
-* Adapts to changes made to slow consumer alert from Pivotal Platform v2.0+
-* Adds configuration in Pivotal Platform tile to scale the nozzle from Operations Manager
-* Refines OMS view files, optimized data flow verification, and compability for Pivotal Platform v2.0+ and System Metrics Forwarder
+* Adapts to changes made to slow consumer alert from VMware Tanzu v2.0+
+* Adds configuration in VMware Tanzu tile to scale the nozzle from Operations Manager
+* Refines OMS view files, optimized data flow verification, and compability for VMware Tanzu v2.0+ and System Metrics Forwarder
 
 Known Issue:
 
@@ -77,7 +77,7 @@ Features included in this release:
 
 Features included in this release:
 
-* Adds Cloud Foundry Environment option for identifying logs and metrics from different Pivotal Platform environments
+* Adds Cloud Foundry Environment option for identifying logs and metrics from different VMware Tanzu environments
 * Installs the Microsoft Azure Log Analytics Nozzle into the system org
 
 
@@ -95,10 +95,10 @@ This release is regenerated from v1.0.0 using tile-generator v8.0.0. Features in
 
 **Release Date:** June 26, 2017
 
-This is the initial release of Microsoft Azure Log Analytics Nozzle for Pivotal Platform. Features included in this release:
+This is the initial release of Microsoft Azure Log Analytics Nozzle for VMware Tanzu. Features included in this release:
 
 * Consume all data from CF Loggregator Firehose, including logs from all apps, and the metrics data from CF components
 * Organize, filter, and transfer data to OMS Log Analytics for deep analyzing
-* Integration with OMS Log Analytics, including default view dashboards and alert rules for monitoring the health and workload of your Pivotal Platform deployment
+* Integration with OMS Log Analytics, including default view dashboards and alert rules for monitoring the health and workload of your VMware Tanzu deployment
 * Automated default configuration for the Microsoft Azure Log Analytics Nozzle
 * Additional logging to track the nozzle status, for example, slow consumer alerts; received, sent, and lost events
