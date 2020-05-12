@@ -49,7 +49,7 @@ Create a Cloud Foundry (CF) user account with access to the Firehose and Cloud C
 <pre class="terminal">$ uaac token client get admin -s UAA-ADMIN-CLIENT-CREDENTIALS-SECRET</pre>
 
 1. Create a CF user account:
-<pre class="terminal">$ cf create-user FIREHOSE-USER FIREHOSE-USER-TAS for VMsSWORD</pre>
+<pre class="terminal">$ cf create-user FIREHOSE-USER FIREHOSE-USER-PASSWORD</pre>
 
 1. Add the new user to the Cloud Controller Admin Read-Only group or Cloud Controller Admin group:
   * For Elastic Runtime v1.9.x and later:
