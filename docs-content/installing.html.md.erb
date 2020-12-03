@@ -1,9 +1,9 @@
 ---
-title: Installing and Configuring Microsoft Azure Log Analytics Nozzle for VMware Tanzu
+title: Installing and Configuring Nozzle for VMware Tanzu for Microsoft Azure Log Analytics
 owner: Partners
 ---
 
-This topic describes how to install and configure Microsoft Azure Log Analytics Nozzle for VMware Tanzu.
+This topic describes how to install and configure Nozzle for VMware Tanzu for Microsoft Azure Log Analytics.
 
 
 ## <a id='create-oms'></a> Create an OMS Workspace
@@ -34,7 +34,7 @@ Create an OMS workspace to send your VMware Tanzu data to.
 
 ## <a id='create-cf-user'></a> Create a CF User Account
 
-Create a Cloud Foundry (CF) user account with access to the Firehose and Cloud Controller. The Microsoft Azure Log Analytics Nozzle for VMware Tanzu service uses this account to retrieve log data.
+Create a Cloud Foundry (CF) user account with access to the Firehose and Cloud Controller. The Nozzle for VMware Tanzu for Microsoft Azure Log Analytics service uses this account to retrieve log data.
 
 1. Install the User Account and Authentication command-line interface (`uaac`), if you have not already:
 <pre class="terminal">$ gem install cf-uaac</pre>
@@ -61,15 +61,15 @@ Create a Cloud Foundry (CF) user account with access to the Firehose and Cloud C
 <pre class="terminal">$ uaac member add doppler.firehose FIREHOSE-USER</pre>
 
 
-## <a id='install'></a> Install and Configure Microsoft Azure Log Analytics Nozzle for VMware Tanzu
+## <a id='install'></a> Install and Configure Nozzle for VMware Tanzu for Microsoft Azure Log Analytics
 
 1. Download the product file from Pivotal Network.
 
 1. Navigate to the Ops Manager Installation Dashboard and click **Import a Product** to upload the product file.
 
-1. Under the **Import a Product** button, click **+** next to the version number of Microsoft Azure Log Analytics Nozzle for VMware Tanzu. This adds the tile to your staging area.
+1. Under the **Import a Product** button, click **+** next to the version number of Nozzle for VMware Tanzu for Microsoft Azure Log Analytics. This adds the tile to your staging area.
 
-1. Click the newly-added **Microsoft Azure Log Analytics Nozzle for VMware Tanzu** tile.
+1. Click the newly-added **Nozzle for VMware Tanzu for Microsoft Azure Log Analytics** tile.
 
 1. In the **Nozzle Config** pane, fill in configuration options as follows:
     1. **OMS Workspace ID**: Enter the OMS workspace ID from the [Create an OMS Workspace](#create-oms) step.
@@ -97,7 +97,7 @@ Create a Cloud Foundry (CF) user account with access to the Firehose and Cloud C
 
 1. In the **Stemcell** pane, ensure that the proper stemcell is specified.
 
-1. Return to the Ops Manager Installation Dashboard and click **Apply Changes** to install Microsoft Azure Log Analytics Nozzle for VMware Tanzu tile.
+1. Return to the Ops Manager Installation Dashboard and click **Apply Changes** to install Nozzle for VMware Tanzu for Microsoft Azure Log Analytics tile.
 
 
 ## <a id='solution'></a> Import Default Solution for Cloud Foundry to Your OMS Portal
