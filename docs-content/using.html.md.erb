@@ -11,6 +11,7 @@ This topic describes how to use Microsoft Azure Log Analytics Nozzle for VMware 
 After you install the Azure Log Analytics Nozzle, you can manage it in the Apps Manager as a VMware Tanzu app. You can start or stop the app, and scale it by changing its instance number, memory limit, and disk limit.
         <%= image_tag("images/apps-manager.png") %>
 
+<p class="warn"><strong>Warning</strong>: When using a free or limited tier of OMS Log Analytics, log/metric loss is will occur when quotas are reached. See [this knowledge base article](https://community.pivotal.io/s/article/Azure-Log-Analytics-Nozzle-Crashes-Client-Timeout-Errors) for more info.</p>
 
 ## <a id='logsearch'></a> View Logs from VMware Tanzu in OMS Log Analytics
 
