@@ -2,6 +2,23 @@
 title: Nozzle for VMware Tanzu for Microsoft Azure Log Analytics Release Notes
 owner: Partners
 ---
+## <a id="ver"></a> v2.0.0
+
+**Release Date:** December 3, 2020
+
+Features included in this release:
+
+* Bump ubuntu-xenial stemcell to version 621
+
+### <a id="breaking-changes"></a> Breaking Changes
+
+* With this release the product slug has changed to `azure-nozzle`. If you have setup automation to
+  download this tile from Tanzu Network please ensure it is now downloading from the new product
+  location.
+* The `event_filter` tile property that specifies the envelope types to be filtered out has been
+  renamed to `envelope_filter` and changed from a comma-separated string to a `multi_select_options`.
+  Automation that configures this property will need to be updated.
+
 
 ## <a id="ver"></a> v1.4.3
 
