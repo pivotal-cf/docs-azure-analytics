@@ -78,6 +78,7 @@ Create a Cloud Foundry (CF) user account with access to the Firehose and Cloud C
     1. **OMS Post Timeout**: Specify the HTTP post timeout for sending events to OMS Log Analytics. Default is 10s.
     1. **OMS Batch Time**: Specify the interval for posting a batch of messages to OMS Log Analytics. Default is 10s.
     1. **Max Event Number Per Batch**: Specify the maximum number of messages in a batch. Default is 1000.
+    1. **Azure Resource ID**: Enter the Resource ID of the Azure resource to associate the data with. That allows the data to be included in resource-context queries. If this field isn't specified, the data will not be included in resource-context queries.
     1. **Firehose Username**: Enter the name of the user that you created in the [Create a CF User Account](#create-cf-user) step.
     1. **Firehose User Password**: Enter the password of the user that you created in the [Create a CF User Account](#create-cf-user) step.
     1. **Cloud Foundry API Address**: Enter the API URL of the VMware Tanzu environment, or leave it empty to let the nozzle fetch from current environment. e.g. `https://api.203.0.113.0.xip.io`.
