@@ -2,6 +2,21 @@
 title: Nozzle for VMware Tanzu for Microsoft Azure Log Analytics Release Notes
 owner: Partners
 ---
+## <a id="ver"></a> v3.0.0
+
+**Release Date:** June 23, 2021
+
+Features included in this release:
+
+* Include the `x-ms-AzureResourceId` header in post requests to the azure log handling service.
+* App metadata is no longer cached indefinitely, which can lead to stale data.  The new caching interval is configurable.
+
+### <a id="breaking-changes"></a> Breaking Changes
+
+* Configuring a too-short app metadata caching interval can result in higher CF API load.
+We recommend monitoring the load and increasing this interval as needed.
+
+
 ## <a id="ver"></a> v2.0.0
 
 **Release Date:** December 3, 2020
