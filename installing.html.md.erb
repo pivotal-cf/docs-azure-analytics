@@ -90,6 +90,7 @@ Create a Cloud Foundry (CF) user account with access to the Firehose and Cloud C
     1. **Idle Timeout**: Specify the keep-alive duration for the Firehose consumer. Default is 60s.
     1. **Log Event Count**: Enable this option to log the total count of events that the nozzle receives, sends and loses, to OMS Log Analytics as `CounterEvents`.
     1. **Log Event Count Interval**: The time interval for logging event count to OMS Log Analytics. Default is 60s.
+    1. **App Info Caching Interval**: How long to cache app names and other metadata. Default is 60s. If the load on the CF API Server is too high, the interval should be increased.
     1. **Log Level**: Logging level of the nozzle. Options are `Debug`, `Info`, and `Error`. Default is `Debug`.
 
 1. In the **Errands** pane, leave the default settings.
