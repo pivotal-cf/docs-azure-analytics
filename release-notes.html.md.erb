@@ -2,6 +2,15 @@
 title: Nozzle for VMware Tanzu for Microsoft Azure Log Analytics Release Notes
 owner: Partners
 ---
+
+## <a id="ver"></a> v4.0.0
+**Release Date:** Sept 20, 2021
+
+Features included in this release:
+* improve nozzle performance, both in ingress and data caching
+    * nozzle will now drop envelopes when it is unable to process them effectively for any reason. This will be reported as a metric sent to azure as `nozzle.stats.eventsDropped`.
+* Increase reliability by reconnecting to traffic controller on failures
+
 ## <a id="ver"></a> v3.0.0
 
 **Release Date:** June 23, 2021
