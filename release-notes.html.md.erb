@@ -9,6 +9,8 @@ owner: Partners
 Features included in this release:
 
 * bumped golang to 1.18
+* As part of bumping to Go 1.18 certificates that are signed with the SHA-1 hash function will no longer be accepted.
+  Operators should ensure that the certificates used for TLS termination in front of their Tanzu Application Service foundation are not signed with the SHA-1 hash function.
 
 ## <a id="ver-4-0-1"></a> v4.0.1
 
