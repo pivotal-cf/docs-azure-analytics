@@ -9,9 +9,11 @@ This topic describes how to use Nozzle for VMware Tanzu for Microsoft Azure Log 
 ## <a id='using'></a> Using the Nozzle for VMware Tanzu for Microsoft Azure Log Analytics
 
 After you install the Azure Log Analytics Nozzle, you can manage it in the Apps Manager as a VMware Tanzu app. You can start or stop the app, and scale it by changing its instance number, memory limit, and disk limit.
-        <%= image_tag("images/apps-manager.png") %>
+<img src="images/apps-manager.png" alt="" >
 
-<p class="warn"><strong>Warning</strong>: When using a free or limited tier of OMS Log Analytics, log/metric loss is will occur when quotas are reached. See [this knowledge base article](https://community.pivotal.io/s/article/Azure-Log-Analytics-Nozzle-Crashes-Client-Timeout-Errors) for more info.</p>
+<p class="note caution">
+<span class="note__title">Caution</span>
+When using a free or limited tier of OMS Log Analytics, log/metric loss will occur when quotas are reached. See [this knowledge base article](https://community.pivotal.io/s/article/Azure-Log-Analytics-Nozzle-Crashes-Client-Timeout-Errors) for more info.</p>
 
 ## <a id='logsearch'></a> View Logs from VMware Tanzu in OMS Log Analytics
 
@@ -21,17 +23,17 @@ From your workspace, you can:
 
 * Use **Log Search** to query the data. For example:
     * To list all the logs:
-        <%= image_tag("images/logsearch-1.png") %>
+        <img src="images/logsearch-1.png" alt="" >
     * To get the instance count of each app:
-        <%= image_tag("images/logsearch-2.png") %>
+        <img src="images/logsearch-2.png" alt="" >
     * To view the realtime CPU usage of each app:
-        <%= image_tag("images/logsearch-3.png") %>
+        <img src="images/logsearch-3.png" alt="" >
 
 * Create and customize your view dashboard in **View Designer**:
-        <%= image_tag("images/dashboard-view.png") %>
+        <img src="images/dashboard-view.png" alt="" >
 
 * Create **Alert Rules** to alert you of different events:
-        <%= image_tag("images/create-alert-1.png") %>
-        <%= image_tag("images/create-alert-2.png") %>
+        <img src="images/create-alert-1.png" alt="" >
+        <img src="images/create-alert-2.png" alt="" >
 
 For more information, see the [View in OMS Portal](https://github.com/vmware-tanzu/nozzle-for-microsoft-azure-log-analytics/#view-in-oms-portal) section of the Nozzle for VMware Tanzu for Microsoft Azure Log Analytics code repository.
