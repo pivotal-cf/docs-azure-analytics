@@ -1,7 +1,7 @@
 # docs-azure-analytics
 
 This repository contains content for the Nozzle for VMware Tanzu for Microsoft Azure Log Analytics documentation. We publish the Nozzle for VMware Tanzu for Microsoft Azure Log Analytics documentation at
-https://docs.pivotal.io/azure-log-analytics-nozzle/index.html.
+https://docs.vmware.com/en/Nozzle-for-VMware-Tanzu-for-Microsoft-Azure-Log-Analytics/services/documentation/GUID-index.html.
 
 ## How To Contribute
 
@@ -18,12 +18,17 @@ GitHub. To locate the source file for a topic, navigate to the topic on the Nozz
 
 | **Branch Name** | **Content** | **Location** |
 |-----------------|-------------|--------------|
-| `master` | Nozzle for VMware Tanzu for Microsoft Azure Log Analytics | https://docs.pivotal.io/azure-log-analytics-nozzle/index.html |
+| `master` | Nozzle for VMware Tanzu for Microsoft Azure Log Analytics | https://docs.vmware.com/en/Nozzle-for-VMware-Tanzu-for-Microsoft-Azure-Log-Analytics/services/documentation/GUID-index.html |
 
 **master**: The `master` branch is used to publish the live version of the site.
 Create pull requests on `master` to contribute or correct technical inaccuracies in the Nozzle for VMware Tanzu for Microsoft Azure Log Analytics documentation.
 
+
 ## How To Use Bookbinder To View Your Documentation
+
+NOTE: This document is no longer published via Bookbinder, but now uses DocWorks and DocsDash.
+[Docworks](https://docworks.vmware.com/one/scene?permalink=uniqueId%3DMarkdown-Project-561) is now used to publish to [staging](https://docs-staging.vmware.com/en/Nozzle-for-VMware-Tanzu-for-Microsoft-Azure-Log-Analytics/services/documentation/GUID-index.html).
+DocsDash is used to publish to [production](https://docs.vmware.com/en/Nozzle-for-VMware-Tanzu-for-Microsoft-Azure-Log-Analytics/services/documentation/GUID-index.html).
 
 [Bookbinder](https://github.com/pivotal-cf/bookbinder/blob/master/README.md) is a command-line
 utility for stitching Markdown documents into a hostable web app. The documentation team uses
