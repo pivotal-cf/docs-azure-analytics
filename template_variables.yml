@@ -5,7 +5,7 @@ template_variables:
   title: <span class="title-deemph">VMware Tanzu</span> Documentation
   hero_text: "Detailed documentation to help you install, understand, and succeed with VMware Tanzu enterprise-grade software."
   product_name: Nozzle for VMware Tanzu for Microsoft Azure Log Analytics
-  product_url: https://network.tanzu.vmware.com/products/azure-nozzle/
+  product_url: https://support.broadcom.com/group/ecx/productdownloads?subfamily=Nozzle%20for%20VMware%20Tanzu%20for%20Microsoft%20Azure%20Log%20Analytics
   product_link: <div class="header-item"><a href="https://network.tanzu.vmware.com/">Back to Product Page</a></div>
   support_link: <a href="https://tanzu.vmware.com/support" target="_blank">Support</a>
   support_call_to_action: <a href="https://tanzu.vmware.com/support" target="_blank">Need Support?</a>
